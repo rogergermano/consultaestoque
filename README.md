@@ -11,8 +11,8 @@ Aplicação web local desenvolvida em FastAPI e Python para consulta rápida de 
 ## Como Executar Manualmente
 1. Abra o terminal na pasta raiz do projeto.
 2. Ative o ambiente virtual: `venv\Scripts\activate`
-3. Inicie o servidor Uvicorn: `uvicorn main:app --host 192.168.1.198 --port 8000 --reload`
-4. Acesse pelo navegador na rede local usando o IP do servidor na porta 8000. 192.168.1.198:8000
+3. Inicie o servidor Uvicorn: `uvicorn main:app --host 0.0.0.0 --port 8000 --reload`
+4. Acesse pelo navegador na rede local usando o IP do servidor na porta 8000. 0.0.0.0:8000
 
 ## Como Iniciar Automaticamente.
 1. Renomeie o arquivo iniciar.txt para `iniciar.bat`.
