@@ -1,0 +1,296 @@
+/* Paleta: grafite + âmbar
+   Sem fontes externas: Bahnschrift (Windows) com fallback para fontes do sistema. */
+:root {
+  --grafite-900: #1d2023;
+  --grafite-700: #2b2f33;
+  --grafite-500: #5a6169;
+  --cinza-300: #b9bec5;
+  --cinza-200: #dfe2e6;
+  --cinza-100: #eef0f2;
+  --fundo: #e6e8eb;
+  --branco: #ffffff;
+  --ambar: #f5a524;
+  --ambar-escuro: #d98e0b;
+  --ambar-suave: #fff3d9;
+  --perigo: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Bahnschrift", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background-color: var(--fundo);
+  color: var(--grafite-900);
+  line-height: 1.45;
+  padding: 20px;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.escondido {
+  display: none !important;
+}
+
+/* ---------- Cartões ---------- */
+.card {
+  background: var(--branco);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(29, 32, 35, 0.12), 0 8px 24px rgba(29, 32, 35, 0.08);
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Login ---------- */
+#tela-login {
+  max-width: 400px;
+  margin: 10vh auto 0;
+  padding: 28px;
+  border-top: 5px solid var(--ambar);
+}
+
+#tela-login h2 {
+  margin-bottom: 22px;
+  color: var(--grafite-900);
+}
+
+/* ---------- Campos ---------- */
+.campo {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--grafite-700);
+  margin-bottom: 6px;
+}
+
+.campo input {
+  padding: 10px 12px;
+  border: 1px solid var(--cinza-300);
+  border-radius: 4px;
+  font-size: 1rem;
+  background: var(--branco);
+  min-height: 44px;
+}
+
+.campo input::placeholder {
+  color: #8b929a;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--grafite-700);
+  box-shadow: 0 0 0 3px rgba(245, 165, 36, 0.45);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  background-color: var(--ambar);
+  color: var(--grafite-900);
+  padding: 11px 20px;
+  min-height: 44px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: var(--ambar-escuro);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible,
+.btn-sair:focus-visible {
+  outline: 3px solid var(--grafite-900);
+  outline-offset: 2px;
+}
+
+.btn-sair {
+  background: transparent;
+  color: var(--branco);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 18px;
+  min-height: 38px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-sair:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--branco);
+}
+
+.btn-sair:focus-visible {
+  outline-color: var(--ambar);
+}
+
+/* ---------- Consulta ---------- */
+.cabecalho-consulta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--grafite-700);
+  color: var(--branco);
+  border-bottom: 4px solid var(--ambar);
+}
+
+.corpo-consulta {
+  padding: 24px;
+}
+
+.painel-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0 16px;
+  margin-bottom: 20px;
+  align-items: end;
+}
+
+.campo-botao {
+  margin-bottom: 16px;
+}
+
+.erro {
+  color: var(--perigo);
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.erro:empty {
+  display: none;
+}
+
+/* ---------- Tabela ---------- */
+.tabela-container {
+  overflow-x: auto;
+  border: 1px solid var(--cinza-200);
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 11px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--cinza-200);
+  font-variant-numeric: tabular-nums;
+}
+
+th {
+  background-color: var(--cinza-100);
+  color: var(--grafite-700);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--grafite-700);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f8f9;
+}
+
+tbody tr:hover {
+  background-color: var(--ambar-suave);
+}
+
+/* Colunas numéricas (preço e estoque) alinhadas à direita */
+th:nth-child(4),
+th:nth-child(5),
+td:nth-child(4),
+td:nth-child(5) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+td:first-child {
+  color: var(--grafite-500);
+  white-space: nowrap;
+}
+
+/* O número que o balconista procura: estoque em destaque */
+.destaque-estoque {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--grafite-900);
+  background-color: var(--ambar-suave);
+  border-left: 3px solid var(--ambar);
+}
+
+.texto-vazio {
+  text-align: center;
+  color: var(--grafite-500);
+  padding: 32px 20px;
+}
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  #tela-login {
+    margin-top: 6vh;
+    padding: 22px;
+  }
+
+  .cabecalho-consulta {
+    padding: 14px 16px;
+  }
+
+  .corpo-consulta {
+    padding: 16px;
+  }
+
+  .painel-filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .painel-filtros .campo:nth-child(2),
+  .painel-filtros .campo:nth-child(3),
+  .campo-botao {
+    grid-column: 1 / -1;
+  }
+}

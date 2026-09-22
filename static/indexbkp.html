@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2b2f33">
+  <title>Consulta de estoque</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Tela de login -->
+    <div id="tela-login" class="card">
+      <h2>Acesso ao sistema</h2>
+      <form id="form-login">
+        <div class="campo">
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" placeholder="ex.: vendas" autocomplete="username" required>
+        </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite a senha" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+        <div id="mensagem-erro-login" class="erro" role="alert"></div>
+      </form>
+    </div>
+
+    <!-- Tela de consulta de estoque (inicia oculta) -->
+    <div id="tela-consulta" class="card escondido">
+      <div class="cabecalho-consulta">
+        <h2>Consulta de estoque</h2>
+        <button id="btn-sair" class="btn-sair">Sair</button>
+      </div>
+
+      <div class="corpo-consulta">
+        <!-- Filtros de busca -->
+        <div class="painel-filtros">
+          <div class="campo">
+            <label for="filtro-codigo">Código</label>
+            <input type="text" id="filtro-codigo" placeholder="Ex: 1020">
+          </div>
+          <div class="campo">
+            <label for="filtro-nome">Nome do produto</label>
+            <input type="text" id="filtro-nome" placeholder="Ex: Cimento">
+          </div>
+          <div class="campo">
+            <label for="filtro-estrutura">Estrutura de estoque</label>
+            <input type="text" id="filtro-estrutura" placeholder="Ex: ARGAMASSAS">
+          </div>
+          <div class="campo">
+            <label for="filtro-limite">Estoque mínimo</label>
+            <input type="number" id="filtro-limite" value="50.0" step="1">
+          </div>
+          <div class="campo-botao">
+            <button id="btn-buscar" class="btn">Pesquisar</button>
+          </div>
+        </div>
+
+        <!-- Tabela de resultados -->
+        <div class="tabela-container">
+          <table id="tabela-resultados">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Produto</th>
+                <th>Estrutura</th>
+                <th>Preço</th>
+                <th>Estoque físico</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+              <tr>
+                <td colspan="5" class="texto-vazio">Use os filtros acima e clique em Pesquisar.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

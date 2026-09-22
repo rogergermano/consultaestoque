@@ -1,0 +1,11 @@
+@echo off
+chcp 65001 >nul
+echo Configurando a inicializacao automatica da API de Estoque...
+
+schtasks /create /tn "EstoqueLojaAPI" /tr "cmd.exe /c cd /d C:\Users\Administrador\Desktop\API && venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8000" /sc ONSTART /rl HIGHEST /f
+
+echo.
+echo ========================================================
+echo Tarefa "EstoqueLojaAPI" criada/atualizada com sucesso!
+echo ========================================================
+pause

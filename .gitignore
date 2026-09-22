@@ -1,0 +1,26 @@
+# Variáveis de ambiente e credenciais (NÃO SUBIR)
+.env
+.env.*
+*.env
+
+# Ambiente virtual Python
+venv/
+.venv/
+env/
+ENV/
+
+# Arquivos temporários e Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Arquivos de configurações de IDEs
+.vscode/
+.idea/
+
+# Arquivos do Sistema Operacional (Windows)
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.tmp
